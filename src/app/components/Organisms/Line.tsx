@@ -1,12 +1,12 @@
 import React from 'react';
-import SignOut from '../Atom/Signout';
+import SignOut from '../Atom/SignOut';
 
 const Line = () => {
   return (
     <div>
-    <SignOut />
-  </div>
-)
+      <SignOut />
+    </div>
+  );
 };
 
 export default Line;

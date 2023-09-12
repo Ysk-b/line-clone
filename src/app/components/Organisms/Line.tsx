@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -25,7 +26,7 @@ const Line = () => {
     <div>
       <SignOut />
       <div className='messages'>
-        {messages.map(({ id, text, photoUrl, userId }) => (
+        {messages.map(({ id, text, photoUrl }) => (
           <div key={id} className='messages'>
             <img src={photoUrl} alt='' />
             <p>{text}</p>

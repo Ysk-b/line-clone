@@ -6,17 +6,20 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const SendMessage = () => {
   const [message, setMessage] = useState('');
+  const currentUser = auth.currentUser;
 
   const sendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    addDoc(collection(db, 'messages'), {
-      // addDoc()を使用し、textに状態変数messageを格納
-      // auth.currentUser_認証された現ユーザーの情報取得
-      text: message,
-      photoUrl: auth.currentUser,
-      userId: auth.currentUser,
-      createdAt: serverTimestamp(),
-    });
+
+    if (currentUser) {
+      addDoc(collection(db, 'messages'), {
+        // addDoc()を使用し、textに状態変数messageを格納
+        text: message,
+        photoURL: currentUser.photoURL,
+        uid: currentUser.uid,
+        createdAt: serverTimestamp(),
+      });
+    }
 
     setMessage('');
   };

@@ -1,8 +1,10 @@
-import React from 'react'
+import SignIn from './components/Atom/SignIn'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <SignIn />
+    </div>
   )
 }
 

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import SignOut from '../Atom/SignOut';
 import { db } from '@/app/data/Firebase';
 import { collection, query, orderBy, onSnapshot, limit } from 'firebase/firestore';
+import SendMessage from '../Molecules/SendMessage';
 
 const Line = () => {
   const [messages, setMessages] = useState([]);
@@ -31,6 +32,7 @@ const Line = () => {
           </div>
         ))}
       </div>
+      <SendMessage />
     </div>
   );
 };
